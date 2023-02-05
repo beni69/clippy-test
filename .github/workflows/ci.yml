@@ -1,0 +1,13 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: beni69/clippy-action@v0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
